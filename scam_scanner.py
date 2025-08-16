@@ -37,6 +37,12 @@ class AuditorScanner :
             'WMT' : '104169'
         }
 
+    from datetime import datetime
+
+    def save_to_wall_of_shame ( ticker , auditor , is_shady ) :
+        with open ( "wall_of_shame.csv" , "a" , newline='' ) as f :
+            f.write ( f"{datetime.now ( ).isoformat ( )},{ticker},{auditor},{'🚩' if is_shady else '✅'}\n" )
+
     def _load_auditor_map ( self ) -> dict :
         """Pre-verified auditor mapping"""
         return {
