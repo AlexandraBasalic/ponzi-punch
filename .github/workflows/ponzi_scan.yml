@@ -1,8 +1,8 @@
-name: Daily Auditor Scan
+name: Ponzi Auditor Scan
 on:
   schedule:
-    - cron: '0 12 * * 1-5'  # Runs weekdays at noon UTC
-  workflow_dispatch:  # Lets you run it manually
+    - cron: '0 12 * * 1-5'  # Weekdays at noon UTC
+  workflow_dispatch:
 
 jobs:
   scan:
@@ -14,7 +14,7 @@ jobs:
           python-version: '3.10'
       - run: pip install requests beautifulsoup4
       - run: python scam_scanner.py > results.txt
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v4  # CERTIFIED WORKING VERSION
         with:
           name: audit-results
           path: results.txt
