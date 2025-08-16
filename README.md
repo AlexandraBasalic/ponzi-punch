@@ -1,24 +1,22 @@
-# 🔥 AUDITOR RADAR  
-*"Because nobody audits the auditors"*  
+# 🦝 AUDITOR RADAR  
+*"Because nobody audits the auditors."*  
 
-**What this does**:  
-- Scrapes SEC filings to find out who's signing off on corporate financials  
-- Flags shady accounting firms (the kind that "miss" $10B "accidentally")  
-- Spits out everything in CSV format so you can embarrass the right people  
 
-**Why I built this**:  
-After seeing the same Big Four rubber-stamp every financial disaster since 2008, I wanted a way to:  
-1. Catch auditor switches *before* the bankruptcy filing  
-2. Spot the next Friehling & Horowitz (Madoff's "auditors")  
-3. Automate what the SEC should’ve done decades ago  
+⚠️ **WARNING: THIS TOOL IS INTENTIONALLY UGLY**  
+- No animations → Fraud isn’t entertaining  
+- No "user-friendly" fluff → SEC filings aren’t either  
+- Just **raw, angry truth** → Like your last audit report  
 
 ---
 
+## 💻 QUICK START  
+```bash
+# 1. Clone (requires Python 3.10+)
+git clone https://github.com/AlexandraBasalic/ponzi-punch.git
+cd ponzi-punch
 
-### 🚀 QUICK START  
-1. **Run the scanner** (requires Python 3.10+):  
-   ```bash
-   git clone https://github.com/AlexandraBasalic/auditor-radar.git
-   cd auditor-radar
-   pip install -r requirements.txt
-   python scam_scanner.py
+# 2. Install dependencies
+pip install -r requirements.txt
+
+# 3. Run on any ticker
+python scam_scanner.py TSLA
