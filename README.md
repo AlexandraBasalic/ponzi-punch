@@ -18,7 +18,7 @@ After seeing the same Big Four rubber-stamp every financial disaster since 2008,
 ### 🚀 QUICK START  
 1. **Run the scanner** (requires Python 3.10+):  
    ```bash
-   git clone https://github.com/[YOUR_USERNAME]/auditor-radar.git
+   git clone https://github.com/AlexandraBasalic/auditor-radar.git
    cd auditor-radar
    pip install -r requirements.txt
    python scam_scanner.py
