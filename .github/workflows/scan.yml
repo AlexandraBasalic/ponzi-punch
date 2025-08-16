@@ -1,0 +1,20 @@
+name: Daily Auditor Scan
+on:
+  schedule:
+    - cron: '0 12 * * 1-5'  # Runs weekdays at noon UTC
+  workflow_dispatch:  # Lets you run it manually
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+      - run: pip install requests beautifulsoup4
+      - run: python scam_scanner.py > results.txt
+      - uses: actions/upload-artifact@v3
+        with:
+          name: audit-results
+          path: results.txt
